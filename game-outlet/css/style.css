@@ -1,0 +1,429 @@
+/* ---- Allgemein ---- */
+body {
+  font-family: var(--font-std);
+  background-color: var(--col-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+div.wrapper {
+  max-width: 80rem;
+  min-height: calc(100vh - 5.028rem);
+  margin: auto;
+  background-image: url(../media/xbox-logo.svg);
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: 21.5rem 59rem;
+}
+
+/* ---- ENDE Allgemein ---- */
+
+/* ---- Header ---- */
+/* ---- Hamburger ---- */
+
+#menu-btn {
+  display: none;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+
+#menu-btn svg {
+  transform: scale(0.8);
+  stroke: var(--col-font);
+}
+
+#menu-btn:hover svg, #menu-btn:active svg {
+  stroke: var(--col-accent);
+  /* transition: stroke ease 0.5s; */
+}
+
+#menu-btn:before {
+  content: '';
+  position: absolute;
+  top: -0.65rem;
+  left: calc(50% - 2.25rem);
+  background: url(../media/circular-text.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  opacity: 0;
+  z-index: -1;
+  transition: all ease 0.5s;
+}
+
+#menu-btn:hover:before, #menu-btn:active:before {
+  opacity: 1;
+  transform: rotate(360deg);
+  transition: ease 1.5s;
+}
+
+#menu-btn[data-state="closed"] :is(.top, .bottom) {
+  animation: to-open-icon 1s forwards;
+}
+
+#menu-btn[data-state="opened"] :is(.top, .bottom) {
+  animation: to-close-icon 1s forwards;
+}
+
+#menu-btn .hamburger {
+  transition: rotate 800ms 100ms;
+}
+
+#menu-btn[data-state="opened"] .hamburger {
+  rotate: 1turn;
+}
+
+#menu-btn .line.top {
+  --rotation: -45deg;
+  transform-origin: 65px 45px;
+}
+
+#menu-btn .line.bottom {
+  --rotation: 45deg;
+  transform-origin: 60px 55px;
+}
+
+@keyframes to-close-icon {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  40% {
+    stroke-dashoffset: 79.9;
+  }
+
+  60% {
+    stroke-dashoffset: 79.9;
+    rotate: calc(var(--rotation));
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+}
+
+@keyframes to-open-icon {
+  0% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+
+  40% {
+    stroke-dashoffset: 79.9;
+    rotate: var(--rotation);
+  }
+
+  60% {
+    stroke-dashoffset: 79.9;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---- ENDE Hamburger ---- */
+
+header {
+  font-family: var(--font-headlines);
+  position: absolute;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--col-header-footer);
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 121px;
+  transition: height 0.6s ease, transform 0.3s ease;
+  box-shadow: var(--col-shadow) 0px 2px 5px -1px, var(--col-shadow) 0px 1px 3px -1px;
+}
+header.small {
+  height: 5.5rem;
+}
+header h1 {
+  text-wrap: nowrap;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+#nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 13.5rem;
+  height: 130vh;
+  height: 130dvh;
+  padding-top: 3rem;
+  padding-left: 2rem;
+  background-color: var(--col-header-footer);
+  background-image: url(../media/xbox-controller-white.png);
+  background-size: 20rem;
+  background-repeat: no-repeat;
+  background-position: 3.5rem 18rem;
+  box-shadow: var(--col-shadow) 2px 2px 5px -1px, var(--col-shadow) 2px 1px 3px -1px;
+}
+
+nav ul li a {
+  padding: 0 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--col-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: all ease 0.5s;
+}
+
+nav ul li a:before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: calc(50% - 2.75rem);
+  background: url(../media/circular-text.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  opacity: 0;
+  z-index: -1;
+  transition: all ease 0.5s;
+}
+
+nav ul li a:hover:before, nav ul li a:active:before {
+  opacity: 1;
+  transform: rotate(360deg);
+  transition: ease 1.5s;
+}
+
+nav ul li a:hover, nav ul li a:active {
+  color: var(--col-font);
+}
+
+/* ---- ENDE Header ---- */
+
+/* ---- Main ---- */
+#refresh-button {
+  position: absolute;
+  z-index: 500;
+  left: calc(50% - 20px);
+  top: 10.25rem;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 100vw;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 0 0 5rem;
+  color: var(--col-font);
+  background: var(--col-header-footer);
+  height: 40rem;
+  border-radius: 0 0 6rem 6rem;
+  overflow: hidden;
+  box-shadow: var(--col-shadow) 0px 2px 5px -1px, var(--col-shadow) 0px 1px 3px -1px;
+}
+
+.content h2 {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-wrap: nowrap;
+  margin-bottom: 2rem;
+}
+
+.content p {
+  text-wrap: balance;
+  font-size: 1.75rem;
+  line-height: 1.5;
+}
+
+.content .text {
+  max-width: 37.5rem;
+}
+
+.content .img {
+  width: 30rem;
+  z-index: 9;
+}
+
+.content .banner-img {
+  margin-top: 8rem;
+}
+
+#banner-img {
+  width: 30rem;
+  height: auto;
+}
+
+.content .circular-text {
+  position: absolute;
+  top: 3rem;
+  right: 9rem;
+  z-index: -1;
+  animation: circularText 12s linear infinite;
+}
+
+@keyframes circularText {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+#all-cards {
+  display: none;
+}
+#selected-cards {
+  max-width: 80%;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.products .card {
+  color: var(--col-font);
+  z-index: 10;
+  width: 18rem;
+  height: 25rem;
+  padding: 1rem;
+  margin-top: 5rem;
+  bottom: 12rem;
+  border-radius: 1rem;
+  background-color: var(--col-card);
+  text-align: center;
+  box-shadow: var(--col-shadow) 0px 2px 5px -1px, var(--col-shadow) 0px 1px 3px -1px;
+}
+
+.img img {
+  width: 12rem;
+  height: 14.8rem;
+}
+
+.products .img {
+  margin-top: -6rem;
+  margin-bottom: 1rem;
+  transition: all ease 0.5s;
+}
+
+.products .img:before {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 12rem;
+  height: 1rem;
+  background-color: #000;
+  border-radius: 100%;
+  filter: blur(1.25rem);
+}
+
+.products .img:hover {
+  transform: translateY(0.5rem);
+}
+
+.products h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.info {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.price-old {
+  font-size: 1rem;
+  color: var(--col-price);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--col-price);
+}
+
+.products a {
+  font-family: var(--font-alt);
+  display: inline-block;
+  padding: 1rem 3rem;
+  bottom: 1.25rem;
+  font-size: 1.25rem;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--col-font-buttons);
+  background-color: var(--col-buttons);
+  border-radius: 100vw;
+  transform: translateY(2rem);
+  transition: all ease 0.5s;
+}
+
+.products a:hover {
+  background-color: var(--col-buttons-hover);
+  color: var(--col-font-buttons-hover);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+/* ---- ENDE Main ---- */
+
+/* ---- Footer ---- */
+
+footer {
+  font-family: var(--font-alt);
+  color: var(--col-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--col-header-footer);
+  box-shadow: var(--col-shadow) 0px -2px 5px -1px, var(--col-shadow) 0px 1px 3px -1px;
+}
+
+footer address {
+  font-weight: bold;
+}
+
+footer img {
+  width: 15rem;
+  height: auto;
+}
+
+footer ul {
+  display: flex;
+  gap: 3rem;
+  list-style-type: none;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--col-accent);
+  font-weight: 500;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+  color: var(--col-font);
+}
+
+/* ---- ENDE Footer ---- */

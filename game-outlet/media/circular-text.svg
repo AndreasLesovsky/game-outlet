@@ -1,0 +1,22 @@
+<svg width="380" height="380" viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+    --col-accent: #107c10;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --col-accent: #07ea0d;
+      }
+    }
+  </style>
+  <defs>
+    <path id="circlePath" d="M 190, 190 m -150, 0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"/>
+  </defs>
+  <circle cx="190" cy="190" r="150" fill="none" stroke="none"/>
+  <text font-family="Georgia" font-size="60" fill="var(--col-accent)">
+    <textPath href="#circlePath" startOffset="20">
+      Join the gaming revolution!
+    </textPath>
+  </text>
+</svg>

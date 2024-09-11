@@ -1,0 +1,176 @@
+/* ---- Media Queries ---- */
+
+/* >80rem XL */
+
+@media screen and (min-width:calc(80rem + 0.1px)) {}
+
+/* >80rem XL Ende */
+
+
+
+/* max 80rem LG */
+
+@media screen and (max-width:80rem) {}
+
+/* max 80rem LG Ende */
+
+
+
+/* max 64rem MD */
+
+@media screen and (max-width:64rem) {
+  div.wrapper {
+    background: none;
+  }
+
+  #menu-btn {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    right: 4.75rem;
+    top: 2rem;
+  }
+
+  nav ul {
+    display: none;
+
+  }
+  #refresh-button {
+    display: none;
+  }
+  
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 3rem 0 3rem;
+    height: 50rem;
+  }
+
+  #banner-img {
+    width: 30rem;
+  }
+
+  .content h2 {
+    text-wrap: wrap;
+  }
+
+  .content .banner-img {
+    margin-top: 7rem;
+  }
+
+  .content .circular-text {
+    top: 2rem;
+  }
+
+  #selected-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    justify-items: center;
+  }
+  
+  .products .card {
+    bottom: 0rem;
+  }
+
+  .products .card:nth-of-type(1),
+  .products .card:nth-of-type(2) {
+    margin-top: 7rem;
+  }
+
+  .products .card {
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    padding: 0.75rem 1.5rem 1.87rem 1.5rem;
+  }
+
+  footer> :first-child {
+    order: 1;
+  }
+
+  footer> :nth-child(2) {
+    order: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer> :last-child {
+    order: 2;
+  }
+
+}
+
+/* max 64rem MD Ende */
+
+
+
+/* max 48rem SM */
+
+@media screen and (max-width:48rem) {
+  #selected-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-between;
+  }
+
+}
+
+/* max 48rem SM Ende*/
+
+
+
+/* max 36rem XS */
+@media screen and (max-width:36rem) {
+  #logo {
+    display: none;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+  .content h2 {
+    font-size: 2.15rem;
+  }
+  
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .products .card {
+    width: 15rem;
+  }
+
+  footer img {
+    width: 10rem;
+    height: auto;
+  }
+
+  footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+}
+
+/* Mobile max 36rem XS Ende */
+
+
+/* max 25rem XXS */
+
+@media screen and (max-width:25rem) {}
+
+/* max 25rem XXS Ende */
+
+
+/* ---- Media Queries Ende ---- */

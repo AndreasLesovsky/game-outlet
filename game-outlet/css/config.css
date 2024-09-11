@@ -1,0 +1,40 @@
+:root {
+    /* ---- Farben ---- */
+    
+    --col-font: #333;
+    --col-price: #6f6f6f;
+    --col-font-buttons: #f1f1f1;
+    --col-font-buttons-hover: #1f1f1f;
+    --col-bg: #e0e0e0;
+    --col-header-footer: #f0f0f0;
+    --col-card: #fff;
+    --col-accent: #107C10;
+    --col-buttons: #107C10;
+    --col-buttons-hover: #07ea0d;
+    --col-shadow: #1f1f1f;
+
+    /* ---- ENDE Farben ---- */
+
+
+    /* ---- Schriften ---- */
+    --font-std: 'Jura', Arial, sans-serif;
+    --font-alt: 'Quicksand', Verdana, sans-serif;
+    --font-headlines: 'Play', Verdana, sans-serif;
+    /* ---- ENDE Schriften ---- */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --col-font: #e1e1e1;
+        --col-price: #8a8a8a;
+        --col-font-buttons: #f1f1f1;
+        --col-font-buttons-hover: #1f1f1f;
+        --col-bg: #1a1a1a;
+        --col-header-footer: #101010;
+        --col-card: #000000;
+        --col-accent: #07ea0d;
+        --col-buttons: #107C10;
+        --col-buttons-hover: #07ea0d;
+        --col-shadow: rgba(255, 255, 255, 0.2);
+    }
+}

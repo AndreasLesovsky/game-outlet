@@ -1,0 +1,74 @@
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+ul,
+ol,
+dl,
+menu,
+summary {
+	margin-left: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+	background: none;
+	border: none;
+	font: inherit;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+	outline: 2px solid var(--col-font);
+}
+
+#menu-btn {
+	outline: none;
+}
+
+video {
+	height: auto;
+	max-width: 100%;
+}
+
+iframe {
+	border: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+/* ---- ENDE Reset ---- */

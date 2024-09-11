@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+    <title>Game Outlet</title>
+    <link rel="stylesheet" href="css/importer.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/config.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="icon" href="media/icon.svg">
+    <link rel="icon" href="media/icon.png">
+    <script src="script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">
+            <a href="#">
+                <svg version="1.1" width="50" height="50" viewBox="0 0 24 24">
+                    <g>
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path fill-rule="nonzero" fill="var(--col-accent)"
+                            d="M5.418 19.527A9.956 9.956 0 0 0 12 22a9.967 9.967 0 0 0 6.585-2.473c1.564-1.593-3.597-7.257-6.585-9.514-2.985 2.257-8.15 7.921-6.582 9.514zm9.3-12.005c2.084 2.468 6.237 8.595 5.064 10.76A9.952 9.952 0 0 0 22 12.003a9.958 9.958 0 0 0-2.975-7.113s-.022-.018-.068-.035a.686.686 0 0 0-.235-.038c-.493 0-1.654.362-4.004 2.705zM5.045 4.856c-.048.017-.068.034-.072.035A9.963 9.963 0 0 0 2 12.003c0 2.379.832 4.561 2.218 6.278C3.05 16.11 7.2 9.988 9.284 7.523 6.934 5.178 5.771 4.818 5.28 4.818a.604.604 0 0 0-.234.039v-.002zM12 4.959S9.546 3.523 7.63 3.455c-.753-.027-1.212.246-1.268.282C8.149 2.538 10.049 2 11.987 2H12c1.945 0 3.838.538 5.638 1.737-.056-.038-.512-.31-1.266-.282-1.917.068-4.372 1.5-4.372 1.5v.004z" />
+                    </g>
+                </svg>
+                <svg version="1.1" id="logo" width="200" height="50">
+                    <text x="0" y="35" font-family="var(--font-headlines)" font-size="28" fill="var(--col-font)">Game
+                        Outlet</text>
+                </svg>
+            </a>
+        </h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <button id="menu-btn" aria-expanded="false">
+            <svg class="hamburger" viewBox="0 0 100 100" width="50">
+                <line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="10" stroke-linecap="round"
+                    stroke-dasharray="80" stroke-dashoffset="0">
+                </line>
+                <line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="10" stroke-linecap="round"
+                    stroke-dasharray="80" stroke-dashoffset="0">
+                </line>
+            </svg>
+        </button>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <section class="content">
+                <div class="text">
+                    <h2>Xbox Games:<br>Unschlagbare Preise!</h2>
+                    <p>Jetzt zuschlagen! Hol dir Top-Titel zu unschlagbaren Preisen und entdecke neue Abenteuer!</p>
+                </div>
+
+                <button id="refresh-button">
+                    <svg height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 496.156 496.156" xml:space="preserve"
+                        fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path style="fill:var(--col-accent);"
+                                d="M0,248.08C0,111.06,111.069,0.002,248.074,0.002c137.013,0,248.082,111.059,248.082,248.078 c0,137.005-111.069,248.074-248.082,248.074C111.069,496.154,0,385.085,0,248.08z">
+                            </path>
+                            <g>
+                                <path style="fill:var(--col-font-buttons-hover);"
+                                    d="M428.243,172.149c-10.348,0.023-20.694,0.054-31.042,0.077 c-23.272-52.177-68.95-89.871-126.649-98.91c-64.287-10.071-125.816,19.788-162.504,72.312 c-16.296,23.326,22.003,45.165,38.16,22.034c50.317-72.037,157.757-65.527,201.907,4.686c-9.559,0.022-19.118,0.046-28.678,0.068 c-2.674,0.008-4.574,1.197-5.749,2.877c-1.92,2.058-2.65,5.072-0.639,8.186c18.204,28.25,36.408,56.499,54.616,84.745 c3.061,4.747,9.663,4.708,12.696-0.046c18.062-28.338,36.126-56.675,54.188-85.013C437.538,178.48,433.602,172.135,428.243,172.149 z">
+                                </path>
+                                <path style="fill:var(--col-font-buttons-hover);"
+                                    d="M350.353,327.224c-49.927,71.49-156.108,65.63-200.886-3.049c9.161-0.022,18.322-0.046,27.484-0.068 c2.666-0.008,4.563-1.19,5.741-2.865c1.924-2.059,2.658-5.072,0.646-8.197c-18.2-28.246-36.405-56.499-54.609-84.741 c-3.056-4.751-9.662-4.712-12.695,0.046c-18.063,28.334-36.13,56.671-54.196,85.009c-2.987,4.689,0.948,11.032,6.308,11.017 c10.669-0.027,21.337-0.054,32.006-0.08c23.498,51.319,68.777,88.332,125.865,97.275c64.287,10.072,125.816-19.784,162.496-72.312 C404.806,325.928,366.508,304.09,350.353,327.224z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+
+                <div class="img">
+                    <div class="banner-img">
+                        <img id="banner-img" src="media/xbox-controller-black.png" alt="xbox-controller">
+                    </div>
+
+                    <div class="circular-text">
+                        <img src="media/circular-text.svg" alt="circular-text">
+                    </div>
+                </div>
+            </section>
+
+            <div id="all-cards">
+                <article class="card">
+                    <div class="img">
+                        <img src="media/immortals.jpg" alt="Immortals">
+                    </div>
+                    <div class="text">
+                        <h3>Immortals<br>of Aveum</h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€34.99</small></p>
+                        <p class="price">€19.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/dah2.jpg" alt="Destroy All Humans 2">
+                    </div>
+                    <div class="text">
+                        <h3>Destroy All<br>Humans 2</h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€19.99</small></p>
+                        <p class="price">€5.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/fc24.jpg" alt="EA Sports FC24">
+                    </div>
+                    <div class="text">
+                        <h3>EA Sports<br>FC24</h3>
+                        <p class="info">Xbox Series X/One</p>
+                        <p class="price-old"><small>€49.99</small></p>
+                        <p class="price">€24.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/starwars.jpg" alt="Star Wars">
+                    </div>
+                    <div class="text">
+                        <h3>Star Wars<br>Jedi Survivor</h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€59.99</small></p>
+                        <p class="price">€29.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/deadspace.jpg" alt="Dead Space">
+                    </div>
+                    <div class="text">
+                        <h3>Dead Space<br><br></h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€49.99</small></p>
+                        <p class="price">€19.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/wildhearts.jpg" alt="Wild Hearts">
+                    </div>
+                    <div class="text">
+                        <h3>Wild Hearts<br><br></h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€29.99</small></p>
+                        <p class="price">€19.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/outcast.jpg" alt="Outcast">
+                    </div>
+                    <div class="text">
+                        <h3>Outcast<br><br></h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€39.99</small></p>
+                        <p class="price">€24.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/nfs.jpg" alt="Need For Speed Unbound">
+                    </div>
+                    <div class="text">
+                        <h3>NFS<br>Unbound</h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€59.99</small></p>
+                        <p class="price">€29.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/remnant2.jpg" alt="Remnant 2">
+                    </div>
+                    <div class="text">
+                        <h3>Remnant 2<br><br></h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€49.99</small></p>
+                        <p class="price">€29.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/aitd.jpg" alt="Alone in the Dark">
+                    </div>
+                    <div class="text">
+                        <h3>Alone In<br>The Dark</h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€49.99</small></p>
+                        <p class="price">€34.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/f1.jpg" alt="F1 2024">
+                    </div>
+                    <div class="text">
+                        <h3>F1 24<br><br></h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€49.99</small></p>
+                        <p class="price">€39.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+
+                <article class="card">
+                    <div class="img">
+                        <img src="media/sr.jpg" alt="Saints Row">
+                    </div>
+                    <div class="text">
+                        <h3>Saints Row<br><br></h3>
+                        <p class="info">Xbox Series X</p>
+                        <p class="price-old"><small>€49.99</small></p>
+                        <p class="price">€9.99</p>
+                    </div>
+                    <a href="#">Kaufen</a>
+                </article>
+            </div>
+
+            <div id="selected-cards" class="products"></div>
+
+        </main>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutzerklärung</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+        <div>
+            <img src="media/payment-methods.png" alt="payment-methods">
+        </div>
+        <address>
+            ©2024 AL
+        </address>
+    </footer>
+</body>
+
+</html>
