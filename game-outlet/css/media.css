@@ -131,6 +131,12 @@
 
 /* max 36rem XS */
 @media screen and (max-width:36rem) {
+  header {
+    padding-inline: 2rem;
+  }
+  #menu-btn {
+    right: 1.75rem;
+  }
   #logo {
     display: none;
   }
@@ -147,7 +153,7 @@
   }
 
   .products .card {
-    width: 15rem;
+    max-width: 14rem;
   }
 
   footer img {
@@ -160,7 +166,6 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-
 }
 
 /* Mobile max 36rem XS Ende */
